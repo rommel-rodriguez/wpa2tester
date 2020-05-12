@@ -1,0 +1,48 @@
+\hypertarget{cappacket_8c}{}\section{cappacket.\+c File Reference}
+\label{cappacket_8c}\index{cappacket.\+c@{cappacket.\+c}}
+{\ttfamily \#include $<$unistd.\+h$>$}\\*
+{\ttfamily \#include $<$pcap.\+h$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$sys/socket.\+h$>$}\\*
+{\ttfamily \#include $<$netinet/in.\+h$>$}\\*
+{\ttfamily \#include $<$arpa/inet.\+h$>$}\\*
+{\ttfamily \#include \char`\"{}hacking.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}hacking-\/network.\+h\char`\"{}}\\*
+Include dependency graph for cappacket.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{cappacket_8c__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{cappacket_8c_a8b147210f8115cd259b966fb68899f04}{parse\+\_\+wlanframe} (u\+\_\+char $\ast$user\+\_\+args, const struct pcap\+\_\+pkthdr $\ast$cap\+\_\+header, const u\+\_\+char $\ast$packet)
+\begin{DoxyCompactList}\small\item\em callback function for pcap\+\_\+loop. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\index{cappacket.\+c@{cappacket.\+c}!parse\+\_\+wlanframe@{parse\+\_\+wlanframe}}
+\index{parse\+\_\+wlanframe@{parse\+\_\+wlanframe}!cappacket.\+c@{cappacket.\+c}}
+\subsubsection[{\texorpdfstring{parse\+\_\+wlanframe(u\+\_\+char $\ast$user\+\_\+args, const struct pcap\+\_\+pkthdr $\ast$cap\+\_\+header, const u\+\_\+char $\ast$packet)}{parse_wlanframe(u_char *user_args, const struct pcap_pkthdr *cap_header, const u_char *packet)}}]{\setlength{\rightskip}{0pt plus 5cm}void parse\+\_\+wlanframe (
+\begin{DoxyParamCaption}
+\item[{u\+\_\+char $\ast$}]{user\+\_\+args, }
+\item[{const struct pcap\+\_\+pkthdr $\ast$}]{cap\+\_\+header, }
+\item[{const u\+\_\+char $\ast$}]{packet}
+\end{DoxyParamCaption}
+)}\hypertarget{cappacket_8c_a8b147210f8115cd259b966fb68899f04}{}\label{cappacket_8c_a8b147210f8115cd259b966fb68899f04}
+
+
+callback function for pcap\+\_\+loop. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em user\+\_\+args} & custom user arguments from the pcap\+\_\+loop function. \\
+\hline
+{\em cap\+\_\+header} & libpcap metadata header about the packet. \\
+\hline
+{\em packet} & pointer to the captured packet \\
+\hline
+\end{DoxyParams}
