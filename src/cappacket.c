@@ -7,6 +7,7 @@
 #include <arpa/inet.h>
 #include "hacking.h"
 #include "hacking-network.h" 
+#include "cappacket.h" 
 
 int is_printable(const char *my_char);
 /**

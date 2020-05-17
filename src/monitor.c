@@ -8,6 +8,7 @@
 #include <ctype.h>
 #include "hacking.h"
 #include "hacking-network.h" 
+#include "monitor.h" 
 
 char *mon_pattern = ".*mon.*";
 
