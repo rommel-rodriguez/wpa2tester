@@ -1,4 +1,5 @@
 #include "hacking-network.h"
+
 int send_string(int sockfd, unsigned char *buffer){
     int sent_bytes, bytes_to_send;
     bytes_to_send = strlen(buffer);

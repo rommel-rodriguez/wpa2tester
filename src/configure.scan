@@ -3,7 +3,7 @@
 
 AC_PREREQ([2.69])
 AC_INIT([FULL-PACKAGE-NAME], [VERSION], [BUG-REPORT-ADDRESS])
-AC_CONFIG_SRCDIR([killer.c])
+AC_CONFIG_SRCDIR([cappacket.c])
 AC_CONFIG_HEADERS([config.h])
 
 # Checks for programs.
@@ -20,7 +20,7 @@ AC_TYPE_SIZE_T
 # Checks for library functions.
 AC_FUNC_MALLOC
 AC_FUNC_REALLOC
-AC_CHECK_FUNCS([strdup])
+AC_CHECK_FUNCS([memset strdup])
 
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT

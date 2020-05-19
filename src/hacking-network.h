@@ -50,7 +50,8 @@ struct tcp_hdr {
  * This header should be 36 bytes long.
  */
 struct radiotap_hdr{
-    u_char placeholder[36];
+    /*u_char placeholder[36];some problem with u_char type, says unknown */
+    unsigned char placeholder[36];
 };
 /**
  * @brief struct for the frame control field of a wlan mac frame(802.11)
