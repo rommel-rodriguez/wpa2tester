@@ -44,7 +44,7 @@ void print_mac(unsigned char *mac_array){
 /**
  * @brief Just Prints the first shunk of the frame for analysis.
  */
-void print_packet_eager(const u_char *frame){
+void print_packet_eager(const unsigned char *frame){
     for(int i = 0; i < 20; i++ ){
         int k = 0;
         for(unsigned char *byte=frame+(i*16); ; byte=byte+1){
@@ -79,10 +79,10 @@ void print_frame_info(const struct wlan_hdr *mac_header){
  * @brief Parses just the mac frame of the wifi header.
  * @param header_start start of wlan frame.
  */
-void decode_wlanframe(const u_char *header_start){
+void decode_wlanframe(const unsigned char *header_start){
     /*TODO: I have no idea what there is in those first 36 bytes. DO SOMETHING!! */
     struct wlan_hdr *mac_header;
-    u_char *spointer = header_start + 36;
+    unsigned char *spointer = header_start + 36;
     char decoration[30];
     char ssid[30] = "";
     memset(decoration, '$', 30); 
@@ -91,7 +91,7 @@ void decode_wlanframe(const u_char *header_start){
     mac_header = (struct wlan_hdr *)(header_start + 36); // Have to add 36 here because of the radiotap header. // Have to add 36 here because of the radiotap header.
 
     print_frame_info(mac_header);
-    //spointer = (u_char *)mac_header;
+    //spointer = (unsigned char *)mac_header;
     if((int)(mac_header->framecon.type) == 0 
             && (int)(mac_header->framecon.sub_type) == 8) { // If packet is type beacon frame.
         printf("====> Es ist ein Beacon Frame!!!\n");
@@ -126,8 +126,8 @@ void decode_wlanframe(const u_char *header_start){
  * @param cap_header libpcap metadata header about the packet.
  * @param packet pointer to the captured packet
  */
-void parse_wlanframe( u_char *user_args, const struct pcap_pkthdr *cap_header, 
-        const u_char *packet){
+void parse_wlanframe( unsigned char *user_args, const struct pcap_pkthdr *cap_header, 
+        const unsigned char *packet){
     printf("Total Length of the packet: %d\n", cap_header->len);
     decode_wlanframe(packet);
 }

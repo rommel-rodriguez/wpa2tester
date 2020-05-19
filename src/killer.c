@@ -12,9 +12,9 @@
 #include "cappacket.h"
 
 void pcap_fatal(const char *, const char *);
-void decode_ethernet(const u_char *);
-void decode_ip(const u_char *);
-u_int decode_tcp(const u_char *);
+void decode_ethernet(const unsigned char *);
+void decode_ip(const unsigned char *);
+u_int decode_tcp(const unsigned char *);
 void parse_arguments(int argc, char *argv[]);
 
 

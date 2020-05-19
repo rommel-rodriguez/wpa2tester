@@ -142,7 +142,7 @@ configure:3756: checking dependency style of gcc
 configure:3867: result: gcc3
 configure:3885: checking for library containing pcap_lookupdev
 configure:3916: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c  >&5
-/tmp/ccT8SrzT.o: In function `main':
+/tmp/ccaEIJyP.o: In function `main':
 /home/shadowthrone/whh_samples/c_code/wifikiller/conftest.c:22: undefined reference to `pcap_lookupdev'
 collect2: error: ld returned 1 exit status
 configure:3916: $? = 1
@@ -177,7 +177,7 @@ configure:3916: $? = 0
 configure:3933: result: -lpcap
 configure:3941: checking for library containing g_io_channel_new_file
 configure:3972: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lpcap  >&5
-/tmp/ccNgoIwZ.o: In function `main':
+/tmp/ccV9eUGd.o: In function `main':
 /home/shadowthrone/whh_samples/c_code/wifikiller/conftest.c:22: undefined reference to `g_io_channel_new_file'
 collect2: error: ld returned 1 exit status
 configure:3972: $? = 1
