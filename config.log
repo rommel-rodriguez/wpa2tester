@@ -27,7 +27,6 @@ uname -v = #42~16.04.1-Ubuntu SMP Tue Oct 10 16:32:20 UTC 2017
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
 
-PATH: /home/shadowthrone/anaconda3/condabin
 PATH: /home/shadowthrone/perl5/bin
 PATH: ~/root/bin
 PATH: /home/shadowthrone/.composer/vendor/bin
@@ -46,9 +45,9 @@ PATH: /usr/local/go/bin
 PATH: /home/shadowthrone/lingo15
 PATH: /home/shadowthrone/lingo15
 PATH: /opt/microchip/xc8/v1.38/bin
-PATH: ~/apps/circos_all/current/bin
+PATH: ~/apps/circos_all/current/bin/
 PATH: /opt/microchip/xc8/v1.38/bin
-PATH: /usr/share/pk2
+PATH: /usr/share/pk2/
 
 
 ## ----------- ##
@@ -99,17 +98,17 @@ gcc: fatal error: no input files
 compilation terminated.
 configure:3167: $? = 1
 configure:3187: checking whether the C compiler works
-configure:3209: gcc   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c  >&5
+configure:3209: gcc    conftest.c  >&5
 configure:3213: $? = 0
 configure:3261: result: yes
 configure:3264: checking for C compiler default output file name
 configure:3266: result: a.out
 configure:3272: checking for suffix of executables
-configure:3279: gcc -o conftest   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c  >&5
+configure:3279: gcc -o conftest    conftest.c  >&5
 configure:3283: $? = 0
 configure:3305: result: 
 configure:3327: checking whether we are cross compiling
-configure:3335: gcc -o conftest   -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c  >&5
+configure:3335: gcc -o conftest    conftest.c  >&5
 configure:3339: $? = 0
 configure:3346: ./conftest
 configure:3350: $? = 0
@@ -141,8 +140,8 @@ configure:3730: result: GNU
 configure:3756: checking dependency style of gcc
 configure:3867: result: gcc3
 configure:3885: checking for library containing pcap_lookupdev
-configure:3916: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c  >&5
-/tmp/ccaEIJyP.o: In function `main':
+configure:3916: gcc -o conftest -g -O2   conftest.c  >&5
+/tmp/ccXxvzIj.o: In function `main':
 /home/shadowthrone/whh_samples/c_code/wifikiller/conftest.c:22: undefined reference to `pcap_lookupdev'
 collect2: error: ld returned 1 exit status
 configure:3916: $? = 1
@@ -172,12 +171,12 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:3916: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lpcap   >&5
+configure:3916: gcc -o conftest -g -O2   conftest.c -lpcap   >&5
 configure:3916: $? = 0
 configure:3933: result: -lpcap
 configure:3941: checking for library containing g_io_channel_new_file
-configure:3972: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lpcap  >&5
-/tmp/ccV9eUGd.o: In function `main':
+configure:3972: gcc -o conftest -g -O2   conftest.c -lpcap  >&5
+/tmp/ccgpeNot.o: In function `main':
 /home/shadowthrone/whh_samples/c_code/wifikiller/conftest.c:22: undefined reference to `g_io_channel_new_file'
 collect2: error: ld returned 1 exit status
 configure:3972: $? = 1
@@ -207,7 +206,7 @@ configure: failed program was:
 |   ;
 |   return 0;
 | }
-configure:3972: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lglib-2.0  -lpcap  >&5
+configure:3972: gcc -o conftest -g -O2   conftest.c -lglib-2.0  -lpcap  >&5
 configure:3972: $? = 0
 configure:3989: result: -lglib-2.0
 configure:4051: checking for pkg-config
@@ -266,7 +265,7 @@ configure:4474: result: /bin/grep -E
 configure:4479: checking for ANSI C header files
 configure:4499: gcc -c -g -O2  conftest.c >&5
 configure:4499: $? = 0
-configure:4572: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lglib-2.0 -lpcap  >&5
+configure:4572: gcc -o conftest -g -O2   conftest.c -lglib-2.0 -lpcap  >&5
 configure:4572: $? = 0
 configure:4572: ./conftest
 configure:4572: $? = 0
@@ -435,7 +434,7 @@ configure:4629: result: yes
 configure:4644: checking for stdlib.h
 configure:4644: result: yes
 configure:4654: checking for GNU libc compatible malloc
-configure:4678: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lglib-2.0 -lpcap  >&5
+configure:4678: gcc -o conftest -g -O2   conftest.c -lglib-2.0 -lpcap  >&5
 configure:4678: $? = 0
 configure:4678: ./conftest
 configure:4678: $? = 0
@@ -443,20 +442,20 @@ configure:4688: result: yes
 configure:4711: checking for stdlib.h
 configure:4711: result: yes
 configure:4721: checking for GNU libc compatible realloc
-configure:4745: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lglib-2.0 -lpcap  >&5
+configure:4745: gcc -o conftest -g -O2   conftest.c -lglib-2.0 -lpcap  >&5
 configure:4745: $? = 0
 configure:4745: ./conftest
 configure:4745: $? = 0
 configure:4755: result: yes
 configure:4779: checking for memset
-configure:4779: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lglib-2.0 -lpcap  >&5
+configure:4779: gcc -o conftest -g -O2   conftest.c -lglib-2.0 -lpcap  >&5
 conftest.c:55:6: warning: conflicting types for built-in function 'memset'
  char memset ();
       ^
 configure:4779: $? = 0
 configure:4779: result: yes
 configure:4779: checking for strdup
-configure:4779: gcc -o conftest -g -O2  -Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib conftest.c -lglib-2.0 -lpcap  >&5
+configure:4779: gcc -o conftest -g -O2   conftest.c -lglib-2.0 -lpcap  >&5
 conftest.c:56:6: warning: conflicting types for built-in function 'strdup'
  char strdup ();
       ^
@@ -481,11 +480,11 @@ generated by GNU Autoconf 2.69.  Invocation command line was
 
 on thunder-box
 
-config.status:873: creating Makefile
-config.status:873: creating src/Makefile
-config.status:873: creating config.h
-config.status:1054: config.h is unchanged
-config.status:1102: executing depfiles commands
+config.status:872: creating Makefile
+config.status:872: creating src/Makefile
+config.status:872: creating config.h
+config.status:1053: config.h is unchanged
+config.status:1101: executing depfiles commands
 
 ## ---------------- ##
 ## Cache variables. ##
@@ -504,8 +503,8 @@ ac_cv_env_GLIB_CFLAGS_set=
 ac_cv_env_GLIB_CFLAGS_value=
 ac_cv_env_GLIB_LIBS_set=
 ac_cv_env_GLIB_LIBS_value=
-ac_cv_env_LDFLAGS_set=set
-ac_cv_env_LDFLAGS_value='-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib'
+ac_cv_env_LDFLAGS_set=
+ac_cv_env_LDFLAGS_value=
 ac_cv_env_LIBS_set=
 ac_cv_env_LIBS_value=
 ac_cv_env_PKG_CONFIG_LIBDIR_set=
@@ -596,7 +595,7 @@ INSTALL_DATA='${INSTALL} -m 644'
 INSTALL_PROGRAM='${INSTALL}'
 INSTALL_SCRIPT='${INSTALL}'
 INSTALL_STRIP_PROGRAM='$(install_sh) -c -s'
-LDFLAGS='-Wl,-O2 -Wl,--sort-common -Wl,--as-needed -Wl,-z,relro -Wl,-z,now -Wl,--disable-new-dtags -Wl,--gc-sections -Wl,-rpath,/home/shadowthrone/anaconda3/lib -Wl,-rpath-link,/home/shadowthrone/anaconda3/lib -L/home/shadowthrone/anaconda3/lib'
+LDFLAGS=''
 LIBOBJS=''
 LIBS='-lglib-2.0 -lpcap '
 LTLIBOBJS=''

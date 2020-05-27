@@ -110,6 +110,6 @@ int activate_monitor(pcap_t *device_handle){
     pcap_set_rfmon(device_handle, 1);
     pcap_set_snaplen(device_handle, 2048); /* Snapshot length */
     pcap_set_timeout(device_handle, 1000); /* Timeout in milliseconds */
-    return pcap_activate(device_handle); /* Returns 0 on success without warnings, negative on error.
+    return pcap_activate(device_handle); /* Returns 0 on success without warnings, negative on error.*/
     /* handle is ready for use with pcap_next() or pcap_loop() */
 }
