@@ -9,9 +9,12 @@
 #include "hacking.h"
 #include "hacking-network.h" 
 #include "monitor.h" 
+#include "../common/stopif.h" 
 
+/*
+ *Change interface/mon _pattern to be parameter of get_monitor
+ */
 char *mon_pattern = ".*mon.*";
-
 char *get_monitor(){
     GRegex *start_regex = g_regex_new(mon_pattern, 0, 0, NULL);
     pcap_if_t *alldevsp , *device;
@@ -23,15 +26,26 @@ char *get_monitor(){
     first_device = pcap_lookupdev(errbuf); // pcap_lookupdev returns a pointer to the first 
                                            // character of a string containing the name of the
                                            // first network interface found int the system.
+    /*
     printf("First Device %s\n", first_device);
+    */
     //First get the list of available devices
     printf("Finding available devices ... ");
 
+    /*
+     * TODO: Replace this check for Stopif
+     * */
+    /*
     if( pcap_findalldevs( &alldevsp , errbuf) )
     {
         printf("Error finding devices : %s" , errbuf);
         exit(1);
     }
+    */
+    /*TODO: Not sure if Stopif works as intended*/
+    Stopif( pcap_findalldevs( &alldevsp , errbuf) != 0, 
+            exit(1),
+            sprintf("Dev. Lookup Error:\n%s\n" , errbuf) )
     printf("Done");
 
     //Print the available devices
@@ -59,9 +73,11 @@ char *get_monitor(){
     return NULL;
 }
 
-/** function get_monitorable_device
+/** @brief Gets the first monitorable device it encounters
+ * function get_monitorable_device
  * Needs to have root permission to work properly  and return 
  *  the right device, else it returns the first device it finds.
+ *  @return pcap_t
  *  */
 pcap_t *get_monitorable_device(){
     pcap_t *pcap_handle;
@@ -71,29 +87,35 @@ pcap_t *get_monitorable_device(){
     char *first_device;
     int count = 1, n;
 
+    /*
     first_device = pcap_lookupdev(errbuf); // pcap_lookupdev returns a pointer to the first 
                                            // character of a string containing the name of the
                                            // first network interface found int the system.
     printf("First Device %s\n", first_device);
     //First get the list of available devices
-    printf("Finding available devices ... ");
-
+    */
+    printf("Finding available devices ... \n");
+    /*
     if( pcap_findalldevs( &alldevsp , errbuf) )
     {
         printf("Error finding devices : %s" , errbuf);
         exit(1);
     }
-    printf("Done");
+    */
+    Stopif( pcap_findalldevs( &alldevsp , errbuf) != 0, 
+            exit(1),
+            sprintf("Dev. Lookup Error:\n%s\n" , errbuf) )
+    printf("Done\n");
 
     //Print the available devices
-    printf("\nAvailable Devices are :\n");
+    printf("\nAvailable Devices :\n");
     for(device = alldevsp ; device != NULL ; device = device->next)
     {
-
         printf("%d. %s - %s\n" , count , device->name , device->description);
         pcap_handle = pcap_create(device->name, errbuf); // Creates the device without activating it
 
         if(pcap_handle != NULL && pcap_can_set_rfmon(pcap_handle)){
+            /*TODO: Why dis this failing? it passes eno1 as a monitorable device! */
             printf("=========>Found monitor capable interface: %s<===========\n",device->name); 
             return pcap_handle;
         }

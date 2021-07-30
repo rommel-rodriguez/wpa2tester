@@ -174,7 +174,7 @@ AUTOMAKE = @AUTOMAKE@
 AWK = @AWK@
 CC = @CC@
 CCDEPMODE = @CCDEPMODE@
-CFLAGS = -std=gnu11 -Wall -g
+CFLAGS = @CFLAGS@
 CPP = @CPP@
 CPPFLAGS = @CPPFLAGS@
 CYGPATH_W = @CYGPATH_W@
@@ -259,6 +259,7 @@ top_build_prefix = @top_build_prefix@
 top_builddir = @top_builddir@
 top_srcdir = @top_srcdir@
 killer_SOURCES = killer.c monitor.c hacking.c hacking-network.c cappacket.c
+AM_CFLAGS = -std=gnu11 -Wall -g
 killer_CPPFLAGS = $(GLIB_CFLAGS)
 killer_LDADD = $(GLIB_LIBS)
 all: all-am

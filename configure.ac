@@ -18,6 +18,7 @@ AC_PROG_CC
 # Checks for libraries.
 AC_SEARCH_LIBS([pcap_lookupdev],[pcap])
 AC_SEARCH_LIBS([g_io_channel_new_file],[glib-2.0 glib libglib])
+# TODO: Consider adding an AC_CHECK_LIB for gsl
 PKG_CHECK_MODULES([GLIB], [glib-2.0 gobject-2.0]) ## Depends on pkg-config !!!!
 
 # Checks for header files.

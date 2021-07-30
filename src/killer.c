@@ -27,7 +27,7 @@ int main(int argc, char *argv[]){
         printf("Attempting to set device to monitor mode...\n");
         if(activate_monitor(device_handle) >= 0){
             printf("Monitor mode enabled.\n");
-            pcap_loop(device_handle, 30, parse_wlanframe, NULL);
+            pcap_loop(device_handle, 100, parse_wlanframe, NULL);
         }else
             printf("Could NOT activate monitor mode.\n");
 

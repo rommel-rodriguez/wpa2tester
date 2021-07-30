@@ -174,7 +174,7 @@ AUTOMAKE = ${SHELL} /home/shadowthrone/whh_samples/c_code/wifikiller/missing aut
 AWK = gawk
 CC = gcc
 CCDEPMODE = depmode=gcc3
-CFLAGS = -std=gnu11 -Wall -g
+CFLAGS = -g -O2
 CPP = gcc -E
 CPPFLAGS = 
 CYGPATH_W = echo
@@ -259,6 +259,7 @@ top_build_prefix = ../
 top_builddir = ..
 top_srcdir = ..
 killer_SOURCES = killer.c monitor.c hacking.c hacking-network.c cappacket.c
+AM_CFLAGS = -std=gnu11 -Wall -g
 killer_CPPFLAGS = $(GLIB_CFLAGS)
 killer_LDADD = $(GLIB_LIBS)
 all: all-am

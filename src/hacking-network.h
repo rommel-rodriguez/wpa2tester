@@ -3,6 +3,11 @@
 
 #define ETHER_ADDR_LEN 6 
 #define ETHER_HDR_LEN 14
+/*
+ * TODO: Mayor alert, compiler tries to align structs to 4-byte boundaries
+ * so DO NOT EXPECT structs to have the right size  always!!!!!!
+ * use __attribute__((packet)) and other tricks like unions to get the right sizes
+ * */
 /* This function accepts a socket FD and a ptr to the null terminated
  * string to send. the function will make sure all the bytes of the
  * string are sent. Returns 1 on successs and 0 on failure.
@@ -48,10 +53,13 @@ struct tcp_hdr {
 /**
  * RadioTap header for this particular Wifi ADAPTER ONLY.
  * This header should be 36 bytes long.
+ * DEPENDS ON THE CHIP'S VENDOR
  */
 struct radiotap_hdr{
     /*unsigned char placeholder[36];some problem with unsigned char type, says unknown */
+    /*TODO: Review and study its fields*/
     unsigned char placeholder[36];
+
 };
 /**
  * @brief struct for the frame control field of a wlan mac frame(802.11)
@@ -71,9 +79,19 @@ struct frame_control{
 };
 /*
  * Some considerations:
- * It seems that the QoS control part may or may not be included, dependending
- * on the type/subtype of the frame.
+ * this is the part of the mac 802.11 header that is common to all 
+ * type and sub-type combinations that the 802.11 can have. 
+ * TODO: To my current understanding only framecon and the last FCS
+ * field are present in all kinds of 802.11 headers, so may need
+ * to modify this or just discar wlan_hdr altogether
  */
+struct wlan_hdr{
+    struct frame_control framecon; // This one should be replaced by a type of the struct above
+    unsigned short duration;
+    unsigned char ra[ETHER_ADDR_LEN];
+};
+/*Originally used: */
+/*
 struct wlan_hdr{
     struct frame_control framecon; // This one should be replaced by a type of the struct above
     unsigned short duration;
@@ -83,6 +101,7 @@ struct wlan_hdr{
     unsigned short seq_control;
     unsigned char sa[ETHER_ADDR_LEN]; // Source Address 
 };
+*/
 
 /*
  * @brief Specific header for a type:ma subtype:beacon wlan frame.
@@ -97,8 +116,17 @@ struct beacon_hdr{
     unsigned char ta[ETHER_ADDR_LEN]; // Transmitter Address 
     unsigned char da[ETHER_ADDR_LEN]; // Destination Address 
     unsigned short seq_control;
-    //unsigned int ht_control; // Seems like this one is not part of beacon hdr
-};
+    unsigned char timestamp[8];
+    unsigned short binter; // beacon interval
+    unsigned short capinfo; // capability info, 36 bytes up to here
+    /*TODO:I am forcing this padding in order to get the right aligment for ssid
+     *Correct after or find out what the f* is going on
+     * */
+    unsigned short padding; // Seems like access points add 2 non-printable characters
+    /*To the SSID, hence the need for this padding? */
+    /*the ssid might start with \0\n both of which i am not taking into account*/
+    unsigned char ssid;
+} __attribute__((packed));
 
 int send_string(int sockfd, unsigned char *buffer);
 int recv_line(int sockfd, unsigned char *dest_buffer);
