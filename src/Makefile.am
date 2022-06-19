@@ -1,6 +1,6 @@
-bin_PROGRAMS = killer
-killer_SOURCES = killer.c monitor.c hacking.c hacking-network.c cappacket.c
+bin_PROGRAMS = wpa2tester
+wpa2tester_SOURCES = wpa2tester.c monitor.c hacking.c hacking-network.c cappacket.c
 AM_CFLAGS = -std=gnu11 -Wall -g
-killer_CPPFLAGS = $(GLIB_CFLAGS)
-## killer_CFLAGS = 
-killer_LDADD = $(GLIB_LIBS)
+wpa2tester_CPPFLAGS = $(GLIB_CFLAGS)
+## wpa2tester_CFLAGS = 
+wpa2tester_LDADD = $(GLIB_LIBS)

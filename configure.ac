@@ -2,13 +2,13 @@
 # Process this file with autoconf to produce a configure script.
 
 AC_PREREQ([2.69])
-AC_INIT([killer], [1], [/dev/null])
+AC_INIT([wpa2tester], [1], [/dev/null])
 
 AM_INIT_AUTOMAKE
 
-## AC_CONFIG_SRCDIR([src/killer.c])
+## AC_CONFIG_SRCDIR([src/wpa2tester.c])
 # AC_CONFIG_SRCDIR([config.h.in]) # configure needs to locate itself
-AC_CONFIG_SRCDIR([src/killer.c]) # configure needs to locate itself
+AC_CONFIG_SRCDIR([src/wpa2tester.c]) # configure needs to locate itself
 AC_CONFIG_HEADERS([config.h])
 
 

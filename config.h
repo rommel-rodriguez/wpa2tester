@@ -55,19 +55,19 @@
 #define HAVE_UNISTD_H 1
 
 /* Name of package */
-#define PACKAGE "killer"
+#define PACKAGE "wpa2tester"
 
 /* Define to the address where bug reports for this package should be sent. */
 #define PACKAGE_BUGREPORT "/dev/null"
 
 /* Define to the full name of this package. */
-#define PACKAGE_NAME "killer"
+#define PACKAGE_NAME "wpa2tester"
 
 /* Define to the full name and version of this package. */
-#define PACKAGE_STRING "killer 1"
+#define PACKAGE_STRING "wpa2tester 1"
 
 /* Define to the one symbol short name of this package. */
-#define PACKAGE_TARNAME "killer"
+#define PACKAGE_TARNAME "wpa2tester"
 
 /* Define to the home page for this package. */
 #define PACKAGE_URL ""
