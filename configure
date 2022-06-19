@@ -3994,6 +3994,7 @@ if test "$ac_res" != no; then :
 
 fi
 
+# TODO: Consider adding an AC_CHECK_LIB for gsl
 
 
 

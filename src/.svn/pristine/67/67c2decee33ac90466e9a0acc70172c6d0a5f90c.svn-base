@@ -1,3 +1,0 @@
-bin_PROGRAMS = killer
-killer_SOURCES = killer.c hacking.h hacking-network.h
-killer_CFLAGS = `pkg-config --cflags glib-2.0`
